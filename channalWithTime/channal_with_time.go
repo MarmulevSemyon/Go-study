@@ -23,7 +23,7 @@ func main() {
 }
 func sentToChan(ch chan int, stop_ch chan int, wg *sync.WaitGroup) {
 	defer wg.Done()
-	//defer close(ch)
+	defer close(ch)
 
 	tick := time.NewTicker(3 * time.Millisecond)
 
